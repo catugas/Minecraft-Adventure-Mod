@@ -1,15 +1,21 @@
 package com.catugas.testmod.util.handlers;
 
-import com.catugas.testmod.init.BlockInit;
+import com.catugas.testmod.init.BiomeInit;
+import com.catugas.testmod.init.ModBlocks;
 import com.catugas.testmod.init.ModItems;
-import com.catugas.testmod.util.IHasModel;
+import com.catugas.testmod.util.interfaces.IHasModel;
+import com.catugas.testmod.world.gen.WorldGenCustomOres;
+import com.catugas.testmod.world.types.WorldTypeAnartica;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.WorldType;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @EventBusSubscriber
 public class RegistryHandler 
@@ -23,7 +29,7 @@ public class RegistryHandler
 	@SubscribeEvent
 	public static void onBlockRegister(RegistryEvent.Register<Block> event)
 	{
-		event.getRegistry().registerAll(BlockInit.BLOCKS.toArray(new Block[0]));
+		event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
 	}
 	
 	@SubscribeEvent
@@ -37,7 +43,7 @@ public class RegistryHandler
 			}
 		}
 		
-		for (Block block : BlockInit.BLOCKS)
+		for (Block block : ModBlocks.BLOCKS)
 		{
 			if (block instanceof IHasModel)
 			{
@@ -46,6 +52,16 @@ public class RegistryHandler
 		}
 	}
 	
+	public static void preInitRegistries()
+	{
+		GameRegistry.registerWorldGenerator(new WorldGenCustomOres(), 0);
+		// GameRegistry.addSmelting( , new ItemStack(Item.getByNameOrId("tm:tele_node"),1), 0.3f);
+		
+		BiomeInit.registerBiomes();
+	}
 	
-	
+	public static void postInitRegistries()
+	{
+		WorldType ANARTICA = new WorldTypeAnartica();
+	}
 }

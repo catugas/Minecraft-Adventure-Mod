@@ -1,5 +1,5 @@
-﻿{
+{
 	"variants": {
-	   "normal":  { "model": "tele_node"}
+	   "normal":  { "model": "tm:tele_node"}
 	}
 }

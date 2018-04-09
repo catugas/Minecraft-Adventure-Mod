@@ -2,6 +2,7 @@ package com.catugas.testmod;
 
 import com.catugas.testmod.proxy.CommonProxy;
 import com.catugas.testmod.util.Reference;
+import com.catugas.testmod.util.handlers.RegistryHandler;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -21,21 +22,12 @@ public class Main {
 	public static CommonProxy proxy; 
 	
 	@EventHandler
-	public static void PreInit(FMLPreInitializationEvent event)
-	{
-		
-	}
+	public static void PreInit(FMLPreInitializationEvent event) {RegistryHandler.preInitRegistries();}
 	
 	@EventHandler
-	public static void init(FMLInitializationEvent event)
-	{
-		
-	}
+	public static void init(FMLInitializationEvent event) {}
 	
 	@EventHandler
-	public static void Postinit(FMLPostInitializationEvent event)
-	{
-		
-	}
+	public static void PostInit(FMLPostInitializationEvent event) {RegistryHandler.postInitRegistries();}
 
 }
