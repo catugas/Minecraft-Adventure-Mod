@@ -1,0 +1,34 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":  
+    [
+      "#",
+      "X",
+      "Z"
+    ],
+    
+    "key": 
+    {
+      "#": 
+      {
+        "item": "minecraft:gunpowder"
+      },
+      
+      "X":
+      {
+         "item": "minecraft:stick"
+      },
+      
+      "Z":
+      {
+         "item": "minecraft:feather"
+      }
+    },
+    
+    "result":
+    {
+        "item": "tm:explosive_arrow",
+        "count": 4
+    }
+}

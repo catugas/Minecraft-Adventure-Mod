@@ -1,0 +1,17 @@
+
+item.bronze_ingot.name=Bronze Ingot
+item.silver_ingot.name=Silver Ingot
+item.explosive_arrow.name=Explosive Arrow
+
+tile.tele_node.name=Teleportation Node
+
+
+tile.copper_block.name=Copper Block
+tile.tin_block.name=Tin Block
+tile.silver_block.name=Silver Block
+
+tile.ore_overworld_tin.name=Tin Ore
+tile.ore_overworld_copper.name=Copper Ore
+tile.ore_overworld_silver.name=Silver Ore
+
+entity.militia.name=Militia Man
